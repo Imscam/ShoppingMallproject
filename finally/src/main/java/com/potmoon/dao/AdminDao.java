@@ -1,0 +1,15 @@
+package com.potmoon.dao;
+
+import java.util.List;
+
+import com.potmoon.domain.BoardVO;
+
+public interface AdminDao {
+	
+	public List<BoardVO> getClothList();
+	
+	public BoardVO getClothDetail(int clothNum);
+	
+	public void delete(Long clothNum);
+
+}

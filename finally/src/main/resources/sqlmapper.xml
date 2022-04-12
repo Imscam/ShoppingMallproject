@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  일반게시판 쿼리 Mapper  -->
+<!--  작성자 : 김상인  -->
+<!--  작성일 : 2022-3-04  -->
+<mapper namespace="com.potmoon.sqlmapper">
+<!--  상품 목록 : select  -->
+<select id="list" resultType="com.potmoon.domain.BoardVO"> select clothNum, clothCode, clothName, clothPrice, clothInventory, clothImage, clothImageName, clothInfo, clothSize from potmoonboard order by clothNum desc </select>
+<!--  상품 조회   -->
+<select id="getClothDetail" resultType="com.potmoon.domain.BoardVO"> select clothNum, clothCode, clothName, clothPrice, clothInventory, clothImage, clothImageName, clothInfo, clothSize from potmoonboard where clothNum = #{clothNum} </select>
+<!--  상품 삭제  -->
+<delete id="delete" parameterType="Long"> delete from potmoonboard where clothNum = #{clothNum} </delete>
+
+
+
+</mapper>
